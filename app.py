@@ -1,5 +1,8 @@
 import streamlit as st
 import requests
+import geopandas as gpd
+import pandas as pd
+
 
 st.markdown('''
 # Taxi Fare Prediction Tool''')
@@ -28,6 +31,14 @@ with st.form('Insert the following Parameters'):
                     'passenger_count': int(passenger_count)
                 }
 
+# New York City map coordinates for display
+nyc_map_data = pd.DataFrame({
+    'lat': [float(pickup_lat), float(drop_lat)],
+    'lon': [float(pickup_long), float(drop_long)]
+})
+
+# Display map of New York City
+st.map(nyc_map_data)
 
 # 3. Let's call our API using the `requests` package..
 
