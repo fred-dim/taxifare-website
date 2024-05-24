@@ -33,8 +33,8 @@ with st.form('Insert the following Parameters'):
 
 # New York City map coordinates for display
 nyc_map_data = pd.DataFrame({
-    'lat': [float(pickup_lat), float(drop_lat)],
-    'lon': [float(pickup_long), float(drop_long)]
+    'lat': [float(pickup_latitude), float(dropoff_latitude)],
+    'lon': [float(pickup_longitude), float(dropoff_longitude)]
 })
 
 # Display map of New York City
